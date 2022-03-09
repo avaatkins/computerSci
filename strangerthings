@@ -1,0 +1,17 @@
+# Stranger Things Main Theme
+use_bpm 160
+use_synth :saw
+stranger = [:c2, :e2, :g2, :b2, :c3, :b2, :g2, :e2]
+z = 0
+
+live_loop :main_theme do
+  with_fx :distortion do
+    7.times do
+      play (stranger [z])
+      z = z + 1
+      
+      sleep 0.5
+    end
+    z = 0
+  end
+end
